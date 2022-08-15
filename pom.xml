@@ -11,13 +11,15 @@
     <packaging>jar</packaging>
 
     <properties>
-        <tridion.version>7.1.0</tridion.version>
-        <si4t.version>1.0</si4t.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <tridion.version>11.6.0</tridion.version>
+        <si4t.version>1.2</si4t.version>
         <amazonaws.version>1.10.16</amazonaws.version>
         <commons-io.version>2.4</commons-io.version>
-        <httpclient.version>4.3.3</httpclient.version>
-        <gson.version>2.2.2</gson.version>
-        <slf4j-api.version>1.6.4</slf4j-api.version>
+        <httpclient.version>4.5.12</httpclient.version>
+        <gson.version>2.8.7</gson.version>
+        <slf4j-api.version>1.7.31</slf4j-api.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -82,9 +84,8 @@
 
     <dependencies>
         <dependency>
-            <!-- TODO: upload si4t to Maven -->
             <groupId>org.si4t</groupId>
-            <artifactId>si4t</artifactId>
+            <artifactId>si4t-se</artifactId>
             <version>${si4t.version}</version>
         </dependency>
         <dependency>
@@ -103,13 +104,13 @@
             <version>${httpclient.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.tridion</groupId>
-            <artifactId>cd_model</artifactId>
+            <groupId>com.sdl.delivery</groupId>
+            <artifactId>udp-common-config-legacy</artifactId>
             <version>${tridion.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.tridion</groupId>
-            <artifactId>cd_core</artifactId>
+            <groupId>com.sdl.delivery</groupId>
+            <artifactId>udp-common-util</artifactId>
             <version>${tridion.version}</version>
         </dependency>
         <dependency>

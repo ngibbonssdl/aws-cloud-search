@@ -48,17 +48,18 @@ public class CloudSearchIndexer implements SearchIndex {
 	
 	private int indexBatchSize;
 
-	public void configure(Configuration configuration) throws ConfigurationException
-	{
+	@Override
+	public void configure(com.tridion.configuration.Configuration configuration) throws ConfigurationException {
+
 		log.debug("Configuration is: " + configuration.toString());
 
-		Configuration indexerConfiguration = configuration.getChild(INDEXER_NODE);
+		Configuration indexerConfiguration = configuration.getConfiguration(INDEXER_NODE);
 
-		String documentEndpoint = indexerConfiguration.getAttribute("documentEndpoint");
+		String documentEndpoint = indexerConfiguration.getAttribute("documentEndpoint", "");
 		log.info("Setting Document Endpoint to: " + documentEndpoint);
 		this.documentEndpoint = documentEndpoint;
 
-		String authentication = indexerConfiguration.getAttribute("authentication");
+		String authentication = indexerConfiguration.getAttribute("authentication", "");
 		log.info("Authentication method set to: " + authentication);
 		this.authentication = authentication;
 
